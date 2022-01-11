@@ -1012,7 +1012,7 @@ body.dark-theme {
   }
 
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1113,7 +1113,7 @@ body.dark-theme {
   }
 
   .footer__container {
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(3, max-content);
     justify-content: space-between;
   }
   .footer__title {
