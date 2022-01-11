@@ -170,6 +170,9 @@ productList.forEach((prod) => {
 
 /*=============== ADD TO CART & CART FUNCTIONS ===============*/
 let cart = [];
+if (localStorage.getItem("cart") != null) {
+cart = JSON.parse(localStorage.getItem("cart"));
+}
 
 const cartContainer = document.getElementById("cart__container");
 const cartTotalItems = document.getElementById("cart__prices-item");
@@ -204,7 +207,7 @@ const updateCart = () => {
   cartTotalPrice.innerHTML = "";
   cartTotalItems.innerHTML = `${totalItems} items`;
   cartTotalPrice.innerHTML = `$${totalPrice}`;
-  
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const renderItems = () => {
