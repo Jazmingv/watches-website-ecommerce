@@ -242,6 +242,12 @@ const renderItems = () => {
   });
 };
 
+/*=============== ATENCIÓN! (pongo esto en español para que sea más fácil de leer) Esto está todo comentado porque más o menos funciona, 
+pero tiene 2 fallas: 1) en el momento en que le pongo comprar 2 veces desde la sección de productos (en vez de apretar el + del carrito) a un producto de varios,
+se borra todo el carrito y solo queda ese producto que le apreté comprar 2 veces desde la sección productos.
+2) En el momento en que se borra el último producto del carrito (ya sea con el botoncito del tacho de basura o con el - cuando hay un solo item), el array crea un
+elemento undefined (que no sé de dónde lo saca, porque se crea entre la función *changeQuantity* y *updateCart*), que hace que todo entre en error ===============*/
+
 // const changeQuantity = (operation, product) => {
 //   cart = cart.map((item) => {
 //     let numberOfUnits = item.quantity;
