@@ -276,6 +276,8 @@ elemento undefined (que no sé de dónde lo saca, porque se crea entre la funci�
 //   updateCart();
 // };
 
+updateCart();
+
 /*=============== RANDOM QUOTE ===============*/
 const URLGET = "https://favqs.com/api/qotd";
 let misDatos = "";
