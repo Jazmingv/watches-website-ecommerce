@@ -181,11 +181,11 @@ const cartTotalPrice = document.getElementById("cart__prices-total");
 function addToCart(product) {
   let item = productList.find((id) => id.product === product);
   let cartSome = cart.find((item) => item.product === product);
-  if (cartSome != undefined) {
-    changeQuantity(2, cartSome.product);
-  } else {
+  // if (cartSome != undefined) {
+  //   changeQuantity(2, cartSome.product);
+  // } else {
     cart.push({ ...item, quantity: 1 });
-  }
+  // }
   updateCart();
 }
 
@@ -225,50 +225,50 @@ const renderItems = () => {
         <div class="cart__amount">
             <div class="cart__amount-content">
                 <span class="cart__amount-box">
-                    <i class='bx bx-minus' onclick="changeQuantity(1, '${item.product}')"></i>
+                    <i class='bx bx-minus'></i>
                 </span>
 
                 <span class="cart__amount-number">${item.quantity}</span>
 
                 <span class="cart__amount-box">
-                    <i class='bx bx-plus' onclick="changeQuantity(2, '${item.product}')"></i>
+                    <i class='bx bx-plus'></i>
                 </span>
             </div>
 
-            <i class='bx bx-trash-alt cart__amount-trash'  onclick="changeQuantity(0, '${item.product}')"></i>
+            <i class='bx bx-trash-alt cart__amount-trash'></i>
         </div>
     </div>
 </article>`;
   });
 };
 
-const changeQuantity = (operation, product) => {
-  cart = cart.map((item) => {
-    let numberOfUnits = item.quantity;
+// const changeQuantity = (operation, product) => {
+//   cart = cart.map((item) => {
+//     let numberOfUnits = item.quantity;
 
-    if (item.product === product) {
-      if (operation === 1 && numberOfUnits > 1) {
-        numberOfUnits--;
-        return {
-          ...item,
-          quantity: numberOfUnits,
-        };
-      } else if ((operation === 1 && numberOfUnits <= 1) || operation === 0) {
-        const index = cart.indexOf(item);
-        if (index > -1) {
-          cart.splice(index, 1);
-        }
-      } else if (operation === 2) {
-        numberOfUnits++;
-        return {
-          ...item,
-          quantity: numberOfUnits,
-        };
-      }
-    }
-  });
-  updateCart();
-};
+//     if (item.product === product) {
+//       if (operation === 1 && numberOfUnits > 1) {
+//         numberOfUnits--;
+//         return {
+//           ...item,
+//           quantity: numberOfUnits,
+//         };
+//       } else if ((operation === 1 && numberOfUnits <= 1) || operation === 0) {
+//         const index = cart.indexOf(item);
+//         if (index > -1) {
+//           cart.splice(index, 1);
+//         }
+//       } else if (operation === 2) {
+//         numberOfUnits++;
+//         return {
+//           ...item,
+//           quantity: numberOfUnits,
+//         };
+//       }
+//     }
+//   });
+//   updateCart();
+// };
 
 /*=============== RANDOM QUOTE ===============*/
 const URLGET = "https://favqs.com/api/qotd";
